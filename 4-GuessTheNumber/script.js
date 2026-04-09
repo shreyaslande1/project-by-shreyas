@@ -41,6 +41,7 @@ function validateguess(guess){
 function checkhuess(guess){
   if(guess===randomnumber){
     displaymessage(`you guessed it right`);
+    endgame();
   }else if(guess<randomnumber){
     displaymessage('number is low');
   }else if(guess>randomnumber){
