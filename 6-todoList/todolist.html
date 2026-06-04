@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color:white;
+}
+
+/* TITLE FIX */
+h1{
+    margin-bottom:20px;
+    font-size:32px;
+    letter-spacing:2px;
+    text-shadow: 0 0 15px rgba(56,189,248,0.6);
+}
+
+/* INPUT BOX CONTAINER */
+.inpgrid{
+    display:flex;
+    gap:10px;
+    padding:20px;
+    border-radius:18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    align-items:center;
+    transition:0.3s;
+}
+
+.inpgrid:hover{
+    transform: translateY(-3px);
+}
+
+/* INPUTS */
+input{
+    padding:12px 14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background: rgba(255,255,255,0.12);
+    color:white;
+    transition:0.3s;
+    min-width:180px;
+}
+
+input:focus{
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+.addbtn{
+    padding:12px 18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    color:white;
+    background: linear-gradient(135deg,#38bdf8,#6366f1);
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.addbtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* TODO LIST BOX */
+.todogrid{
+    margin-top:25px;
+    width:420px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* SINGLE TODO CARD */
+.todogrid div{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    border-radius:14px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: pop 0.3s ease;
+}
+
+/* TEXT INSIDE TODO */
+.todogrid div div{
+    background:none;
+    box-shadow:none;
+    padding:0;
+}
+
+/* DELETE BUTTON */
+.delbtn{
+    padding:6px 10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#ef4444;
+    color:white;
+    transition:0.2s;
+}
+
+.delbtn:hover{
+    transform: scale(1.1);
+    background:#ff2d2d;
+}
+
+/* POP ANIMATION */
+@keyframes pop{
+    from{
+        transform: scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform: scale(1);
+        opacity:1;
+    }
+}
+    </style>
+        
+
+    
+</head>
+<body>
+    <h1>To do list</h1>
+    <div class="inpgrid">
+        <input placeholder="todo name nameinp" class="jsinput">
+        <input type="date" class="jsduedate dateinp">
+        <button onclick="addtodo(this)" class="addbtn">Add</button>
+    </div>
+    <div class="todolist todogrid">
+
+    </div>
+</body>
+<script src="todolist.js"></script>
+</html>
